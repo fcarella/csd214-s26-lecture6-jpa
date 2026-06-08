@@ -2,6 +2,9 @@ package bookstore.pojos;
 
 import java.util.Scanner;
 
+/**
+ * DTO for {@link bookstore.entities.TicketEntity}
+ */
 public class Ticket extends Product {
     private String description = "";
     private double price = 0.0;

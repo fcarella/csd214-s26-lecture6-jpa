@@ -3,6 +3,9 @@ package bookstore.pojos;
 import java.util.Date;
 import java.util.Scanner;
 
+/**
+ * DTO for {@link bookstore.entities.MagazineEntity}
+ */
 public class Magazine extends Publication {
     private int orderQty = 0;
     private Date currentIssue = new Date();

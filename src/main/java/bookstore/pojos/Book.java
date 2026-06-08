@@ -3,6 +3,9 @@ package bookstore.pojos;
 import java.util.Objects;
 import java.util.Scanner;
 
+/**
+ * DTO for {@link bookstore.entities.BookEntity}
+ */
 public class Book extends Publication {
     private String author = "";
 

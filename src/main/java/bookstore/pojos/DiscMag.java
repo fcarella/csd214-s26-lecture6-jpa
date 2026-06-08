@@ -3,6 +3,9 @@ package bookstore.pojos;
 import java.util.Date;
 import java.util.Scanner;
 
+/**
+ * DTO for {@link bookstore.entities.DiscMagEntity}
+ */
 public class DiscMag extends Magazine {
     private boolean hasDisc;
 
