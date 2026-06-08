@@ -1,5 +1,6 @@
 package bookstore.pojos;
 
+import bookstore.entities.TicketEntity;
 import java.util.Scanner;
 
 /**
@@ -17,6 +18,26 @@ public class Ticket extends Product {
     @Override
     public double getPrice() {
         return price;
+    }
+
+    // Mapping: DTO to Database Entity
+    public TicketEntity toEntity() {
+        TicketEntity entity = new TicketEntity();
+        entity.setId(this.getDbId());
+        entity.setProductId(this.getProductId());
+        entity.setDescription(this.getDescription());
+        entity.setPrice(this.getPrice());
+        return entity;
+    }
+
+    // Mapping: Database Entity to DTO
+    public static Ticket fromEntity(TicketEntity entity) {
+        Ticket t = new Ticket();
+        t.setDbId(entity.getId());
+        t.setProductId(entity.getProductId());
+        t.setDescription(entity.getDescription());
+        t.setPrice(entity.getPrice());
+        return t;
     }
 
     @Override

@@ -8,6 +8,9 @@ public class TicketEntity extends ProductEntity {
     @Column(name = "description")
     private String description;
 
+    @Column(name = "price")
+    private double price;
+
     public String getDescription() {
         return description;
     }
@@ -16,10 +19,19 @@ public class TicketEntity extends ProductEntity {
         this.description = description;
     }
 
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
     public TicketEntity() {
     }
 
-    public TicketEntity(String description) {
+    public TicketEntity(String description, double price) {
         this.description = description;
+        this.price = price;
     }
 }

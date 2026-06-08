@@ -11,7 +11,7 @@ public class PublicationEntity extends ProductEntity {
     @Column(name = "price", nullable = false)
     private double price;
 
-    @Column(name = "copies", nullable = false)
+    @Column(name = "copies", nullable = true)
     private int copies;
 
     public String getTitle() {

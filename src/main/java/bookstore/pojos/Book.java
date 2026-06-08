@@ -1,5 +1,6 @@
 package bookstore.pojos;
 
+import bookstore.entities.BookEntity;
 import java.util.Objects;
 import java.util.Scanner;
 
@@ -21,15 +22,39 @@ public class Book extends Publication {
         super(title, price, copies);
         this.author = author;
     }
+
+    // Mapping: DTO to Database Entity
+    public BookEntity toEntity() {
+        BookEntity entity = new BookEntity();
+        entity.setId(this.getDbId());
+        entity.setProductId(this.getProductId());
+        entity.setTitle(this.getTitle());
+        entity.setPrice(this.getPrice());
+        entity.setCopies(this.getCopies());
+        entity.setAuthor(this.getAuthor());
+        return entity;
+    }
+
+    // Mapping: Database Entity to DTO
+    public static Book fromEntity(BookEntity entity) {
+        Book book = new Book(
+                entity.getAuthor(),
+                entity.getTitle(),
+                entity.getPrice(),
+                entity.getCopies()
+        );
+        book.setDbId(entity.getId());
+        book.setProductId(entity.getProductId());
+        return book;
+    }
+
     @Override
     public void initialize(Scanner input) {
-        // Pass scanner up to parent
         super.initialize(input);
 
         System.out.println("Enter Author:");
         this.author = getInput(input, "Unknown Author");
 
-        // Pass scanner to helper
         super.initPriceCopies(input);
     }
 
@@ -39,7 +64,6 @@ public class Book extends Publication {
         System.out.println("Edit Author [" + this.author + "]:");
         this.author = getInput(input, this.author);
     }
-
 
     @Override
     public void sellItem() {
