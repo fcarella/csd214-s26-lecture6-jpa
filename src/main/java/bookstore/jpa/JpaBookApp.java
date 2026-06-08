@@ -1,6 +1,6 @@
 package bookstore.jpa;
 
-import csd214.bookstore.entities.BookEntity;
+import bookstore.entities.BookEntity;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;

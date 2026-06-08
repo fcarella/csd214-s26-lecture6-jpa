@@ -8,7 +8,7 @@ import java.util.Objects;
 
 @Entity
 public class MagazineEntity extends PublicationEntity {
-    @Column(name = "order_qty", nullable = false)
+    @Column(name = "order_qty", nullable = true)
     private int orderQty;
 
     @Column(name = "current_issue")

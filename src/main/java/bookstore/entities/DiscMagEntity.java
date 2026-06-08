@@ -8,7 +8,7 @@ import java.util.Objects;
 
 @Entity
 public class DiscMagEntity extends MagazineEntity {
-    @Column(name = "has_disc", nullable = false)
+    @Column(name = "has_disc", nullable = true)
     private boolean hasDisc;
 
     public boolean getHasDisc() {
